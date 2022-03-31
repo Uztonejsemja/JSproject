@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>First Homework</title>
+        </head>
+    
+    <body id="body" style="background-color: plum;">
+        <button id="button" style="background-color: purple; color:seashell; margin: 20px;">CLICK ME</button>
+        <table style="background-color: salmon;">
+           <tbody id="table">
+
+           </tbody>
+        </table>
+    </body>
+
+    <script>
+
+        const tableValues = new Array(10).fill(false).map((x, i) => {
+    return new Array(10).fill(1).map((y, i2) => {
+        return (i + 1) * i2
+    })
+})
+
+       
+
+        document.addEventListener('DOMContentLoaded', tableCreate, false);
+
+        function tableCreate() {
+            const table = document.getElementById("table");
+            tableValues.forEach(tableValues => {
+                 const row = document.createElement("tr")
+                tableValues.forEach(tableValue => {
+                const cell = document.createElement("td");
+                cell.innerHTML = tableValue;
+            row.appendChild(cell)
+                })
+            table.appendChild(row)
+         })
+        }
+
+
+       const btn = document.querySelector('#button');
+        btn.addEventListener('click', function (){
+            var x = document.getElementById("table").rows[0].cells;
+            x[0].innerHTML = "100";
+        })
+
+       
+
+    </script>
+</html>
+
